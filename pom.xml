@@ -3,12 +3,54 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>SpringCloud-Seckill-Shop</artifactId>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.springframework.boot</groupId>
+      </plugin>
+    </plugins>
+  </build>
 
-  <dependencies>
-
-  </dependencies>
   <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <groupId>com.alibaba</groupId>
+        <version>${druid.version}</version>
+      </dependency>
+      <dependency>
+        <artifactId>mysql-connector-java</artifactId>
+        <groupId>mysql</groupId>
+        <version>${mysql.version}</version>
+      </dependency>
+      <dependency>
+        <artifactId>mybatis-spring-boot-starter</artifactId>
+        <groupId>org.mybatis.spring.boot</groupId>
+        <version>${mybatis.version}</version>
+      </dependency>
 
+      <dependency>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <groupId>org.springframework.cloud</groupId>
+        <scope>import</scope>
+        <type>pom</type>
+        <version>${cloud.version}</version>
+      </dependency>
+      <!--  spring-cloud-alibaba    -->
+      <dependency>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <groupId>com.alibaba.cloud</groupId>
+        <type>pom</type>
+        <version>${cloud-alibaba.version}</version>
+      </dependency>
+      <!--  注册及配置中心  -->
+      <dependency>
+        <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        <groupId>com.alibaba.cloud</groupId>
+        <version>${nacos.version}</version>
+      </dependency>
+    </dependencies>
   </dependencyManagement>
   <developers>
     <developer>
@@ -18,14 +60,67 @@
   </developers>
   <groupId>cn.heshw</groupId>
   <modelVersion>4.0.0</modelVersion>
+  <modules>
+    <module>shop-auth</module>
+    <module>shop-user</module>
+  </modules>
 
   <packaging>pom</packaging>
 
+  <parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <relativePath/>
+    <version>2.4.0</version> <!-- lookup parent from repository -->
+  </parent>
+
+  <dependencies>
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+      <scope>provided</scope>
+      <version>${lombok.version}</version>
+    </dependency>
+    <!--配置文件处理器-->
+    <dependency>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <optional>true</optional>
+    </dependency>
+    <!--  spring test  -->
+    <dependency>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <exclusions>
+        <exclusion>
+          <artifactId>junit-vintage-engine</artifactId>
+          <groupId>org.junit.vintage</groupId>
+        </exclusion>
+      </exclusions>
+      <groupId>org.springframework.boot</groupId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
   <properties>
+    <cloud-alibaba.version>2.2.3.RELEASE</cloud-alibaba.version>
+    <cloud.version>Hoxton.SR9</cloud.version>
+    <druid.version>1.2.3</druid.version>
     <java.version>1.8</java.version>
+    <lombok.version>1.18.16</lombok.version>
+    <mybatis.version>2.1.4</mybatis.version>
+    <mysql.version>8.0.22</mysql.version>
+    <nacos.version>2.2.3.RELEASE</nacos.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
+
+  <repositories>
+    <repository>
+      <id>spring-milestones</id>
+      <name>Spring Milestones</name>
+      <url>https://repo.spring.io/milestone</url>
+    </repository>
+  </repositories>
 
   <version>1.0-SNAPSHOT</version>
 
