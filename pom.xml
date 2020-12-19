@@ -2,6 +2,8 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>SpringCloud-Seckill-Shop</artifactId>
+
   <build>
     <plugins>
       <plugin>
@@ -41,8 +43,28 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <developers>
+    <developer>
+      <email>heshw97@hotmail.com</email>
+      <name>He Shaowen</name>
+    </developer>
+  </developers>
+  <groupId>cn.heshw</groupId>
+  <modelVersion>4.0.0</modelVersion>
+  <modules>
+    <module>shop-base</module>
+    <module>shop-common</module>
+    <module>shop-business</module>
+  </modules>
 
-  <artifactId>SpringCloud-Seckill-Shop</artifactId>
+  <packaging>pom</packaging>
+
+  <parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <version>2.3.5.RELEASE</version> <!-- lookup parent from repository -->
+  </parent>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -60,50 +82,19 @@
         <groupId>org.mybatis.spring.boot</groupId>
         <version>${mybatis.version}</version>
       </dependency>
-
-      <!--  spring-cloud    -->
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${cloud.version}</version>
-      </dependency>
-      <!--  spring-cloud-alibaba    -->
       <dependency>
         <artifactId>spring-cloud-alibaba-dependencies</artifactId>
         <groupId>com.alibaba.cloud</groupId>
-        <type>pom</type>
         <version>${cloud-alibaba.version}</version>
       </dependency>
-      <!--  注册及配置中心  -->
+      <!--  spring-cloud    -->
       <dependency>
-        <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        <groupId>com.alibaba.cloud</groupId>
-        <version>${nacos.version}</version>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <groupId>org.springframework.cloud</groupId>
+        <version>${cloud.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
-  <developers>
-    <developer>
-      <email>heshw97@hotmail.com</email>
-      <name>He Shaowen</name>
-    </developer>
-  </developers>
-  <groupId>cn.heshw</groupId>
-  <modelVersion>4.0.0</modelVersion>
-
-  <modules>
-    <module>shop-base</module>
-    <module>shop-common</module>
-    <module>shop-business</module>
-  </modules>
-
-  <packaging>pom</packaging>
-
-  <parent>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <groupId>org.springframework.boot</groupId>
-    <version>2.3.5.RELEASE</version> <!-- lookup parent from repository -->
-  </parent>
 
   <properties>
     <cloud-alibaba.version>2.2.3.RELEASE</cloud-alibaba.version>
@@ -113,7 +104,7 @@
     <lombok.version>1.18.16</lombok.version>
     <mybatis.version>2.1.4</mybatis.version>
     <mysql.version>8.0.22</mysql.version>
-    <nacos.version>2.2.3.RELEASE</nacos.version>
+<!--    <nacos.version>2.2.3.RELEASE</nacos.version>-->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
