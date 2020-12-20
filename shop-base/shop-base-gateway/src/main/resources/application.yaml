@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 88
 
 spring:
   application:
@@ -10,3 +10,10 @@ spring:
       config:
         server-addr: localhost:8848
         file-extension: yml
+    gateway:
+      routes:
+        - id: authroization
+          uri: http://localhost:81/
+          predicates:
+            - Path=/auth/hello
+
