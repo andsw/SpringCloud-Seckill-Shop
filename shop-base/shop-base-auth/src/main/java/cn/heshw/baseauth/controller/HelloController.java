@@ -7,13 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RefreshScope
 public class HelloController {
-//
-//  @Value(value = "${name}")
-//  private String moduleName;
-//
-//  public void setModuleName(String moduleName) {
-//    this.moduleName = moduleName;
-//  }
 
   @GetMapping(value = "/auth/hello")
   public String hello() {

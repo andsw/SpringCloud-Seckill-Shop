@@ -1,0 +1,21 @@
+server:
+  port: 88
+
+spring:
+  application:
+    name: base-gateway
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yml
+    gateway:
+      routes:
+        - id: authroization
+          uri: http://localhost:81/
+          predicates:
+            - Path=/auth/hello
+
+
+allow-host: "localhost"

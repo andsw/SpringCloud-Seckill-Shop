@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "allow-host",
+      "type": "java.lang.String",
+      "description": "Description for allow-host."
+    }
+  ]
+}
