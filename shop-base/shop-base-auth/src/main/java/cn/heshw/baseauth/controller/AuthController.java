@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "/auth")
 public class AuthController {
 
+  private static final String AUTHORIZATION_HEADER = "Authorization";
+
   @PostMapping(value = "/login")
   public void login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) {
     String password = "123456";
@@ -23,7 +25,7 @@ public class AuthController {
       } catch (Exception e) {
         throw new LoginException("token生成失败");
       }
-      response.addHeader("Authorization", token);
+      response.addHeader(AUTHORIZATION_HEADER, token);
     } else {
       throw new LoginException("密码错误");
     }

@@ -41,7 +41,7 @@ public class JWTUtil {
   }
 
   public static void checkTokenValid(String token) throws Exception {
-    Jws<Claims> claimsJws = null;
+    Jws<Claims> claimsJws;
     try {
       claimsJws = Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(token);
     } catch (ExpiredJwtException eje) {
@@ -77,7 +77,6 @@ public class JWTUtil {
    * @param args
    */
   public static void main(String[] args) throws Exception {
-    final JWTUtil jwtUtil = new JWTUtil();
-    System.out.println(jwtUtil.generateToken("heshw", "admin,user"));
+    System.out.println(generateToken("heshw", "admin,user"));
   }
 }
