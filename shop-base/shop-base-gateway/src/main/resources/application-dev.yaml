@@ -6,7 +6,6 @@ spring:
       server-addr: localhost:8848
       config:
         server-addr: localhost:8848
-        file-extension: yml
     gateway:
       routes:
         - id: authroization
@@ -14,5 +13,3 @@ spring:
           predicates:
             - Path=/auth/**
 
-
-allow-host: "localhost"

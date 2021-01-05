@@ -1,6 +1,8 @@
 package cn.heshw.auth;
 
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import java.util.Date;
@@ -12,21 +14,25 @@ public class JWTUtil {
 
   private static final String ROLES_CLAIMS = "role";
 
+  private static final String USERNAME_CLAIMS = "username";
+
   private static final String JWT_SECRET = "heshw-fighting";
 
-  private static final Long TOKEN_TIMEOUT = 3600L;
+  private static final Long TOKEN_TIMEOUT = 3600000L;
 
   public static String generateToken(String username, String roles) throws Exception {
     try {
       Map<String, Object> map = new HashMap<>();
       map.put(ROLES_CLAIMS, roles);
-      map.put("username", username);
+      map.put(USERNAME_CLAIMS, username);
+
+      final Date expireDate = new Date(System.currentTimeMillis() + TOKEN_TIMEOUT);
 
       return Jwts.builder()
           .setSubject(username)
           .setClaims(map)
           .setIssuedAt(new Date())
-          .setExpiration(new Date(System.currentTimeMillis() + TOKEN_TIMEOUT))
+          .setExpiration(expireDate)
           .signWith(SignatureAlgorithm.HS256, JWT_SECRET)
           .compact();
     } catch (Exception e) {
@@ -35,13 +41,18 @@ public class JWTUtil {
   }
 
   public static void checkTokenValid(String token) throws Exception {
-    Claims body = Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(token).getBody();
-    if (StringUtils.isBlank((String) body.get("username")) || StringUtils
-        .isBlank(body.get("roles").toString())) {
-      throw new Exception("登陆信息异常，请重新登陆！");
-    }
-    if (body.getExpiration().before(new Date())) {
+    Jws<Claims> claimsJws = null;
+    try {
+      claimsJws = Jwts.parser().setSigningKey(JWT_SECRET).parseClaimsJws(token);
+    } catch (ExpiredJwtException eje) {
       throw new Exception("登陆凭证已过期，请重新登陆！");
+    } catch (Exception e) {
+      throw new Exception("登陆凭证校验发生异常，请重新登录！");
+    }
+    Claims body = claimsJws.getBody();
+    if (StringUtils.isBlank((String) body.get(USERNAME_CLAIMS)) || StringUtils
+        .isBlank(body.get(ROLES_CLAIMS).toString())) {
+      throw new Exception("登陆信息异常，请重新登陆！");
     }
   }
 

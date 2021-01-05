@@ -7,6 +7,7 @@ import java.util.Map;
 import cn.heshw.exception.LoginException;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.error.ErrorAttributeOptions.Include;
+import org.springframework.boot.web.reactive.error.DefaultErrorAttributes;
 import org.springframework.boot.web.reactive.error.ErrorAttributes;
 import org.springframework.core.annotation.MergedAnnotation;
 import org.springframework.core.annotation.MergedAnnotations;
@@ -23,17 +24,13 @@ import org.springframework.web.server.ServerWebExchange;
 @Component
 public class GatewayGlobalErrorAttributes implements ErrorAttributes {
 
+  private static final String ERROR_ATTRIBUTE = GatewayGlobalErrorAttributes.class.getName() + ".ERROR";
+
   @Override
   public Map<String, Object> getErrorAttributes(ServerRequest request,
       ErrorAttributeOptions options) {
     Map<String, Object> errorAttributes = new LinkedHashMap<>();
     Throwable error = this.getError(request);
-    if (error == null) {
-      errorAttributes.put("status", 404);
-      errorAttributes.put("error", "unknown error");
-      errorAttributes.put("message", "未知错误");
-      return errorAttributes;
-    }
     MergedAnnotation<ResponseStatus> responseStatusAnnotation = MergedAnnotations
         .from(error.getClass(), SearchStrategy.TYPE_HIERARCHY).get(ResponseStatus.class);
     HttpStatus errorStatus = this.determineHttpStatus(error, responseStatusAnnotation);
@@ -49,16 +46,16 @@ public class GatewayGlobalErrorAttributes implements ErrorAttributes {
 
   @Override
   public Throwable getError(ServerRequest request) {
-    return null;
+    return (Throwable)request.attribute(ERROR_ATTRIBUTE).orElseThrow(() -> new IllegalStateException("未知错误"));
   }
 
   @Override
   public void storeErrorInformation(Throwable error, ServerWebExchange exchange) {
-
+    exchange.getAttributes().putIfAbsent(ERROR_ATTRIBUTE, error);
   }
 
   private HttpStatus determineHttpStatus(Throwable error, MergedAnnotation<ResponseStatus> responseStatusAnnotation) {
-    return error instanceof ResponseStatusException ? ((ResponseStatusException)error).getStatus() : (HttpStatus)responseStatusAnnotation.getValue("code", HttpStatus.class).orElse(HttpStatus.INTERNAL_SERVER_ERROR);
+    return error instanceof ResponseStatusException ? ((ResponseStatusException)error).getStatus() : responseStatusAnnotation.getValue("code", HttpStatus.class).orElse(HttpStatus.INTERNAL_SERVER_ERROR);
   }
 
   private String determineMessage(Throwable error, MergedAnnotation<ResponseStatus> responseStatusAnnotation) {
