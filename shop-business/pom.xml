@@ -9,10 +9,6 @@
       <groupId>com.alibaba.cloud</groupId>
     </dependency>
     <dependency>
-      <artifactId>spring-cloud-starter-openfeign</artifactId>
-      <groupId>org.springframework.cloud</groupId>
-    </dependency>
-    <dependency>
       <artifactId>mybatis-spring-boot-starter</artifactId>
       <groupId>org.mybatis.spring.boot</groupId>
     </dependency>

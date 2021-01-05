@@ -4,6 +4,3 @@ server:
 spring:
   profiles:
     active: dev
-
-token:
-  key: heshw-fighting

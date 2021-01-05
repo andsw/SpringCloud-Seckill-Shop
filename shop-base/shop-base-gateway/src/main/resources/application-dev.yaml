@@ -1,6 +1,3 @@
-server:
-  port: 88
-
 spring:
   application:
     name: base-gateway
@@ -15,7 +12,7 @@ spring:
         - id: authroization
           uri: http://localhost:81/
           predicates:
-            - Path=/auth/hello
+            - Path=/auth/**
 
 
 allow-host: "localhost"

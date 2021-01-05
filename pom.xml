@@ -5,12 +5,6 @@
   <artifactId>SpringCloud-Seckill-Shop</artifactId>
 
   <build>
-    <plugins>
-      <plugin>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <groupId>org.springframework.boot</groupId>
-      </plugin>
-    </plugins>
   </build>
   <dependencies>
     <!-- 集成commons工具类 -->
@@ -41,6 +35,11 @@
       </exclusions>
       <groupId>org.springframework.boot</groupId>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.16</version>
     </dependency>
   </dependencies>
   <developers>
