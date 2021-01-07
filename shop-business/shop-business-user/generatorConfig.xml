@@ -37,8 +37,8 @@
     </jdbcConnection>
 
     <javaModelGenerator targetPackage="cn.heshw.businessuser.entity" targetProject="src/main/java"/>
-    <sqlMapGenerator targetPackage="cn.heshw.businessuser.mapper" targetProject="src/main/resources"/>
-    <javaClientGenerator targetPackage="mapper" targetProject="src/main/java"
+    <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+    <javaClientGenerator targetPackage="cn.heshw.businessuser.mapper" targetProject="src/main/java"
       type="XMLMAPPER"/>
 
     <table tableName="user">

@@ -1,4 +1,4 @@
-package mapper;
+package cn.heshw.businessuser.mapper;
 
 import cn.heshw.businessuser.entity.User;
 import cn.heshw.businessuser.entity.UserExample;
