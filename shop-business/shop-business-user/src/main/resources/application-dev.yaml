@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: business-user
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://47.101.223.154:3306/shop-user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true
+      username: root
+      password: 123456
+      initial-size: 1
+      max-active: 5
+      min-idle: 1
+      # 配置获取连接等待超时的时间
+      max-wait: 10000
+      stat-view-servlet:
+        enabled: false
