@@ -11,4 +11,5 @@ public class ShopBusinessUserApplication {
   public static void main(String[] args) {
     SpringApplication.run(ShopBusinessUserApplication.class, args);
   }
+
 }

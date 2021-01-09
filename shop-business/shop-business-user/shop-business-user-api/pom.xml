@@ -3,23 +3,17 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>shop-business</artifactId>
+    <artifactId>shop-business-user</artifactId>
     <groupId>cn.heshw</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-
-  <artifactId>shop-business-user</artifactId>
-  <packaging>pom</packaging>
-  <modules>
-    <module>shop-business-user-biz</module>
-    <module>shop-business-user-api</module>
-  </modules>
+  <packaging>jar</packaging>
+  <artifactId>shop-business-user-api</artifactId>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
-    <generator.project.root>C:\Users\g0qzzne\app\personal\convience\project\java\SpringCloud-Seckill-Shop\shop-business\shop-business-user\</generator.project.root>
   </properties>
 
   <build>
@@ -29,19 +23,9 @@
         <artifactId>mybatis-generator-maven-plugin</artifactId>
         <version>1.3.7</version>
         <configuration>
-          <configurationFile>./generatorConfig.xml</configurationFile>
-          <verbose>true</verbose>
-          <overwrite>true</overwrite>
+          <skip>true</skip>
         </configuration>
       </plugin>
     </plugins>
-    <resources>
-      <resource>
-        <directory>${generator.project.root}/shop-business-user-biz/src/main/resources</directory>
-        <excludes>
-          <exclude>lib/*.jar</exclude>
-        </excludes>
-      </resource>
-    </resources>
   </build>
 </project>
