@@ -36,7 +36,7 @@
       <property name="nullCatalogMeansCurrent" value="true"/>
     </jdbcConnection>
 
-    <javaModelGenerator targetPackage="cn.heshw.businessuser.entity" targetProject="${generator.project.root}\shop-business-user-api\src\main\java"/>
+    <javaModelGenerator targetPackage="cn.heshw.entity" targetProject="${generator.project.root}\shop-business-user-api\src\main\java"/>
     <sqlMapGenerator targetPackage="mapper" targetProject="${generator.project.root}\shop-business-user-biz\src\main\resources"/>
     <javaClientGenerator targetPackage="cn.heshw.businessuser.mapper" targetProject="${generator.project.root}\shop-business-user-biz\src\main\java"
       type="XMLMAPPER"/>

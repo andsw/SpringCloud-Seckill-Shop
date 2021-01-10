@@ -1,13 +1,12 @@
 package cn.heshw.basegateway.config;
 
+import cn.heshw.exception.LoginException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import cn.heshw.exception.LoginException;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.error.ErrorAttributeOptions.Include;
-import org.springframework.boot.web.reactive.error.DefaultErrorAttributes;
 import org.springframework.boot.web.reactive.error.ErrorAttributes;
 import org.springframework.core.annotation.MergedAnnotation;
 import org.springframework.core.annotation.MergedAnnotations;
@@ -64,7 +63,7 @@ public class GatewayGlobalErrorAttributes implements ErrorAttributes {
     } else if (error instanceof ResponseStatusException) {
       return ((ResponseStatusException)error).getReason();
     } else {
-      String reason = (String)responseStatusAnnotation.getValue("reason", String.class).orElse("");
+      String reason = responseStatusAnnotation.getValue("reason", String.class).orElse("");
       if (StringUtils.hasText(reason)) {
         return reason;
       } else {

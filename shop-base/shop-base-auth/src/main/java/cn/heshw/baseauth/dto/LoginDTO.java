@@ -1,4 +1,4 @@
-package cn.heshw.dto;
+package cn.heshw.baseauth.dto;
 
 import lombok.Data;
 

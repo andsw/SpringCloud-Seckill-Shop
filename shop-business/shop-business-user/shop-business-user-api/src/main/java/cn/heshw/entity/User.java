@@ -1,4 +1,4 @@
-package cn.heshw.businessuser.entity;
+package cn.heshw.entity;
 
 import java.util.Date;
 

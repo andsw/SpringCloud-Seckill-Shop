@@ -8,21 +8,8 @@
   </modules>
   <dependencies>
     <dependency>
-      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-      <groupId>com.alibaba.cloud</groupId>
-    </dependency>
-    <dependency>
-      <artifactId>mybatis-spring-boot-starter</artifactId>
-      <groupId>org.mybatis.spring.boot</groupId>
-    </dependency>
-    <dependency>
-      <artifactId>mysql-connector-java</artifactId>
-      <groupId>mysql</groupId>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <artifactId>druid-spring-boot-starter</artifactId>
-      <groupId>com.alibaba</groupId>
+      <groupId>com.spring4all</groupId>
+      <artifactId>swagger-spring-boot-starter</artifactId>
     </dependency>
   </dependencies>
 

@@ -34,7 +34,6 @@
     <module>shop-base-auth</module>
     <module>shop-base-zipkin</module>
     <module>shop-base-gateway</module>
-    <module>shop-base-auth-client</module>
   </modules>
 
   <dependencyManagement>

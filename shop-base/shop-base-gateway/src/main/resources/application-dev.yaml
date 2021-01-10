@@ -3,7 +3,10 @@ spring:
     name: base-gateway
   cloud:
     nacos:
-      server-addr: localhost:8848
+      discovery:
+        server-addr: localhost:8848
+        ip: localhost
+        port: ${server.port}
       config:
         server-addr: localhost:8848
     gateway:
@@ -12,4 +15,8 @@ spring:
           uri: http://localhost:81/
           predicates:
             - Path=/auth/**
+        - id: user
+          uri: http://localhost:82/
+          predicates:
+            - Path=/user/**
 

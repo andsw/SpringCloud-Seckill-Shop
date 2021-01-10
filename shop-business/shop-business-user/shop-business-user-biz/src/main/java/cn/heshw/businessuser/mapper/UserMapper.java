@@ -1,7 +1,7 @@
 package cn.heshw.businessuser.mapper;
 
-import cn.heshw.businessuser.entity.User;
-import cn.heshw.businessuser.entity.UserExample;
+import cn.heshw.entity.User;
+import cn.heshw.entity.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
