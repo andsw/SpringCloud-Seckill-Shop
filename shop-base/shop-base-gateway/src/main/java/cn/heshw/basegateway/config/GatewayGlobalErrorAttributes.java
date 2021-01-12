@@ -20,6 +20,10 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.server.ServerWebExchange;
 
+
+/**
+ * 自定义Gateway全局异常处理类
+ */
 @Component
 public class GatewayGlobalErrorAttributes implements ErrorAttributes {
 

@@ -18,3 +18,5 @@ management:
       exposure:
         include: '*'
 
+swagger:
+  base-package: cn.heshw.baseauth

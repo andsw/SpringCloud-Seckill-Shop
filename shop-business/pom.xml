@@ -7,10 +7,6 @@
     <module>shop-business-user</module>
   </modules>
   <dependencies>
-    <dependency>
-      <groupId>com.spring4all</groupId>
-      <artifactId>swagger-spring-boot-starter</artifactId>
-    </dependency>
   </dependencies>
 
   <modelVersion>4.0.0</modelVersion>

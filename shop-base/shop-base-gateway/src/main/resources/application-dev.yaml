@@ -19,4 +19,17 @@ spring:
           uri: http://localhost:82/
           predicates:
             - Path=/user/**
-
+        - id: auth-doc
+          uri: http://localhost:81
+          predicates:
+            - Path=/auth-doc/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1
+        - id: user-doc
+          uri: http://localhost:82
+          predicates:
+            - Path=/user-doc/**
+          filters:
+            - SwaggerHeaderFilter
+            - StripPrefix=1

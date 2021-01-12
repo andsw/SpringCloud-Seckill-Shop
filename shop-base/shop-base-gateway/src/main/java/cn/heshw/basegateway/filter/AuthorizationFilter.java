@@ -1,6 +1,7 @@
 package cn.heshw.basegateway.filter;
 
 import cn.heshw.auth.JWTUtil;
+import cn.heshw.basegateway.config.MySwaggerResourceProvider;
 import java.nio.charset.StandardCharsets;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -25,6 +26,9 @@ public class AuthorizationFilter implements GlobalFilter, Ordered {
   @Override
   public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
     final String path = exchange.getRequest().getPath().value();
+    if (path.endsWith(MySwaggerResourceProvider.SWAGGER2URL)) {
+      return chain.filter(exchange);
+    }
     for (String allowPath : allowPaths) {
       if (allowPath.equals(path)) {
         return chain.filter(exchange);
