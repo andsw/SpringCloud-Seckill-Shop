@@ -24,12 +24,10 @@ spring:
           predicates:
             - Path=/auth-doc/**
           filters:
-            - SwaggerHeaderFilter
             - StripPrefix=1
         - id: user-doc
           uri: http://localhost:82
           predicates:
             - Path=/user-doc/**
           filters:
-            - SwaggerHeaderFilter
             - StripPrefix=1
