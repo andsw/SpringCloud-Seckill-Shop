@@ -1,3 +1,0 @@
-这个目录纯粹是用来防止用mybatis-generator报错用的，没有这个目录，generate可以成功，但是每次都会报错
-generate failed: Cannot resolve classpath entry
-没有办法解决，只能如此

@@ -5,6 +5,8 @@
   <artifactId>shop-business</artifactId>
   <modules>
     <module>shop-business-user</module>
+    <module>shop-business-product</module>
+    <module>shop-business-order</module>
   </modules>
   <dependencies>
   </dependencies>

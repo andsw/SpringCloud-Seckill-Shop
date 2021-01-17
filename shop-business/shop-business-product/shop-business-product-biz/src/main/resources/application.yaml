@@ -1,0 +1,7 @@
+server:
+  port: 83
+
+spring:
+  profiles:
+    active: dev
+

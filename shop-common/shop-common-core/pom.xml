@@ -16,4 +16,19 @@
     <maven.compiler.target>8</maven.compiler.target>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+      <groupId>com.alibaba.cloud</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+      <groupId>org.mybatis.spring.boot</groupId>
+    </dependency>
+    <dependency>
+      <groupId>com.spring4all</groupId>
+      <artifactId>swagger-spring-boot-starter</artifactId>
+    </dependency>
+  </dependencies>
+
 </project>

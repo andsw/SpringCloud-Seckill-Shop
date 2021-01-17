@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+  <classPathEntry location="C:\Users\g0qzzne\.m2\repository\mysql\mysql-connector-java\8.0.22\mysql-connector-java-8.0.22.jar"/>
+
+  <context id="context1">
+    <!-- 生成的Java文件的编码 -->
+    <property name="javaFileEncoding" value="UTF-8" />
+    <!-- 格式化java代码 -->
+    <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+    <!-- 格式化XML代码 -->
+    <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+    <!--beginningDelimiter和endingDelimiter：指明数据库的用于标记数据库对象名的符号，例如：ORACLE使用双引号，MYSQL默认是`反引号； -->
+    <property name="beginningDelimiter" value="`" />
+    <property name="endingDelimiter" value="`" />
+    <!-- lombok插件，減少生成代碼 -->
+<!--    <plugin type="com.softwareloop.mybatis.generator.plugins.LombokPlugin"/>-->
+    <!-- 生成的mapper文件不是直接覆蓋而是追加，導致mapper文件格式錯誤，添加這個插件，會让让mapper直接覆蓋 -->
+    <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />
+    <commentGenerator>
+      <!-- 不生成日期注释 -->
+      <property name="suppressDate" value="true"/>
+      <!-- 所有的注释都不生成 -->
+      <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+
+    <jdbcConnection connectionURL="jdbc:mysql://47.101.223.154:3306/shop-order"
+      driverClass="com.mysql.cj.jdbc.Driver"
+      userId="root" password="123456">
+      <!--MySQL 8.x 需要指定服务器的时区-->
+      <property name="serverTimezone" value="UTC"/>
+      <!--MySQL 不支持 schema 或者 catalog 所以需要添加这个-->
+      <property name="nullCatalogMeansCurrent" value="true"/>
+    </jdbcConnection>
+
+    <javaModelGenerator targetPackage="cn.heshw.entity" targetProject="${generator.project.root}\shop-business-order-api\src\main\java"/>
+    <sqlMapGenerator targetPackage="mapper" targetProject="${generator.project.root}\shop-business-order-biz\src\main\resources"/>
+    <javaClientGenerator targetPackage="cn.heshw.businessorder.mapper" targetProject="${generator.project.root}\shop-business-order-biz\src\main\java"
+      type="XMLMAPPER"/>
+
+    <table tableName="order"/>
+    <table tableName="order_detail"/>
+    <table tableName="order_status"/>
+
+  </context>
+</generatorConfiguration>

@@ -8,18 +8,18 @@
     <version>1.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-
-  <artifactId>shop-business-user</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>shop-business-user-biz</module>
-    <module>shop-business-user-api</module>
+    <module>shop-business-product-api</module>
+    <module>shop-business-product-biz</module>
   </modules>
+
+  <artifactId>shop-business-product</artifactId>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
-    <generator.project.root>C:\Users\g0qzzne\app\personal\convience\project\java\SpringCloud-Seckill-Shop\shop-business\shop-business-user\</generator.project.root>
+    <generator.project.root>C:\Users\g0qzzne\app\personal\convience\project\java\SpringCloud-Seckill-Shop\shop-business\shop-business-product\</generator.project.root>
   </properties>
 
   <build>

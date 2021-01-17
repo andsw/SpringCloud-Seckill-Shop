@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: business-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+        ip: localhost
+        port: ${server.port}
+  datasource:
+    druid:
+      url: jdbc:mysql://47.101.223.154:3306/shop-order?autoReconnect=true&useUnicode=true&createDatabaseIfNotExist=true&characterEncoding=utf8&useSSL=true&serverTimezone=GMT
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: 123456
+      initial-size: 2
+      min-idle: 2
+      max-active: 4
+      max-wait: 10000
+      test-on-borrow: true
+      test-while-idle: true
+      # 状态监控
+      filter:
+        stat:
+          enabled: true
+          db-type: mysql
+          log-slow-sql: true
+          slow-sql-millis: 2000
+        # 监控过滤器
+      web-stat-filter:
+        enabled: true
+        exclusions:
+          - "*.js"
+          - "*.gif"
+          - "*.jpg"
+          - "*.png"
+          - "*.css"
+          - "*.ico"
+          - "/druid/*"
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: admin
+        login-password: admin
+
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: cn.heshw.entity
+
+swagger:
+  base-package: cn.heshw.businessorder
