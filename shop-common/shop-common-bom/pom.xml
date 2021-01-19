@@ -73,6 +73,36 @@
         <artifactId>shop-business-user-api</artifactId>
         <version>1.0-SNAPSHOT</version>
       </dependency>
+      <dependency>
+        <groupId>cn.heshw</groupId>
+        <artifactId>shop-business-product</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.heshw</groupId>
+        <artifactId>shop-business-product-biz</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.heshw</groupId>
+        <artifactId>shop-business-product-api</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.heshw</groupId>
+        <artifactId>shop-business-order</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.heshw</groupId>
+        <artifactId>shop-business-order-biz</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>cn.heshw</groupId>
+        <artifactId>shop-business-order-api</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 

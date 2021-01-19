@@ -93,7 +93,7 @@
       <dependency>
         <artifactId>spring-cloud-starter-gateway</artifactId>
         <groupId>org.springframework.cloud</groupId>
-        <version>2.2.3.RELEASE</version>
+        <version>${gateway.version}</version>
       </dependency>
       <dependency>
         <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
@@ -120,6 +120,11 @@
         <artifactId>spring-cloud-starter-openfeign</artifactId>
         <version>${feign.version}</version>
       </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+        <version>${actuator.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -133,6 +138,7 @@
   <properties>
     <cloud-alibaba.version>2.2.3.RELEASE</cloud-alibaba.version>
     <nacos.version>2.2.3.RELEASE</nacos.version>
+    <gateway.version>2.2.3.RELEASE</gateway.version>
     <cloud.version>Hoxton.SR9</cloud.version>
     <druid.version>1.2.3</druid.version>
     <java.version>1.8</java.version>
@@ -141,6 +147,7 @@
     <mysql.version>8.0.22</mysql.version>
     <feign.version>2.2.3.RELEASE</feign.version>
     <swagger.version>1.9.1.RELEASE</swagger.version>
+    <actuator.version>2.1.13.RELEASE</actuator.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
