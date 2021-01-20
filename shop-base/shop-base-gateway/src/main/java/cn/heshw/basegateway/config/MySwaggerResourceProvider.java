@@ -7,6 +7,9 @@ import org.springframework.stereotype.Component;
 import springfox.documentation.swagger.web.SwaggerResource;
 import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 
+/**
+ * 从gateway的配置中获取需要展示swagger文档的swaggerResources
+ */
 @Component
 public class MySwaggerResourceProvider implements SwaggerResourcesProvider {
 

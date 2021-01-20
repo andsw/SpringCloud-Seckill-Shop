@@ -22,7 +22,7 @@ import org.springframework.web.server.ServerWebExchange;
 
 
 /**
- * 自定义Gateway全局异常处理类
+ * 自定义Gateway全局异常处理类, 重写以覆盖自带的DefaultErrorAttributes异常处理逻辑
  */
 @Component
 public class GatewayGlobalErrorAttributes implements ErrorAttributes {
