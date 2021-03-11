@@ -29,16 +29,12 @@ public class AuthController {
   }
 
   @PostMapping(value = "/login")
-  public void login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) {
+  public void login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) throws Exception {
     checkAccountValid(loginDTO.getUsername(), loginDTO.getPassword());
     final User user = feignUserService.getAccount(loginDTO.getUsername());
-    if (encode(loginDTO.getPassword()).equals(user.getPassword())) {
+    if (user != null && encode(loginDTO.getPassword()).equals(user.getPassword())) {
       String token;
-      try {
-        token = JWTUtil.generateToken(loginDTO.getUsername(), "super");
-      } catch (Exception e) {
-        throw new LoginException("token生成失败!");
-      }
+      token = JWTUtil.generateToken(loginDTO.getUsername(), "super");
       response.addHeader(AUTHORIZATION_HEADER, token);
     } else {
       throw new LoginException("密码错误!");

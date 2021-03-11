@@ -15,6 +15,8 @@ public interface FeignUserService {
   @GetMapping(value = "/users")
   User getAccount(@RequestParam String username);
 
+
   @PostMapping(value = "/users")
   void saveAccount(@RequestBody User user);
+
 }
