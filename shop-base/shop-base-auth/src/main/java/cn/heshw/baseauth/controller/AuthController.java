@@ -42,7 +42,7 @@ public class AuthController {
   }
 
   @PostMapping("/register")
-  public void register(@RequestBody User user) {
+  public void register(@RequestBody User user) throws javax.security.auth.login.LoginException {
     checkAccountValid(user.getUsername(), user.getPassword());
     user.setPassword(encode(user.getPassword()));
     feignUserService.saveAccount(user);
