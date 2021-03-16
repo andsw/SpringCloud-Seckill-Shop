@@ -26,6 +26,7 @@ public class AuthorizationFilter implements GlobalFilter, Ordered {
   @Override
   public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
     final String path = exchange.getRequest().getPath().value();
+    // 放行swagger请求及配置中心配置的的url的请求
     if (path.endsWith(MySwaggerResourceProvider.SWAGGER2URL)) {
       return chain.filter(exchange);
     }

@@ -130,6 +130,18 @@
         <artifactId>spring-boot-starter-actuator</artifactId>
         <version>${actuator.version}</version>
       </dependency>
+      <!--redis依赖-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+        <version>${redis.version}</version>
+      </dependency>
+      <!--jackson模块-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-json</artifactId>
+        <version>${redis.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -154,6 +166,7 @@
     <hystrix.version>2.2.3.RELEASE</hystrix.version>
     <swagger.version>1.9.1.RELEASE</swagger.version>
     <actuator.version>2.1.13.RELEASE</actuator.version>
+    <redis.version>2.1.13.RELEASE</redis.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>

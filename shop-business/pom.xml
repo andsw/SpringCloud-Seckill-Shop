@@ -7,6 +7,7 @@
     <module>shop-business-user</module>
     <module>shop-business-product</module>
     <module>shop-business-order</module>
+    <module>shop-business-pay</module>
   </modules>
   <dependencies>
   </dependencies>

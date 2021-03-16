@@ -54,6 +54,10 @@
       <groupId>cn.heshw</groupId>
       <artifactId>shop-common-core</artifactId>
     </dependency>
+    <dependency>
+      <groupId>cn.heshw</groupId>
+      <artifactId>shop-base-redis</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
