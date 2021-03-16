@@ -19,6 +19,6 @@ public interface FeignUserService {
 
 
   @PostMapping(value = "/users")
-  void saveAccount(@RequestBody User user) throws LoginException;
+  Integer saveAccount(@RequestBody User user) throws LoginException;
 
 }

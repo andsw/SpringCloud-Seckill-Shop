@@ -19,7 +19,5 @@ public class EncodeUtil {
       System.out.println("密码加密失败");
       return "";
     }
-
   }
-
 }

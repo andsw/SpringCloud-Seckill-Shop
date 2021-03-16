@@ -8,6 +8,7 @@ import cn.heshw.baseauth.dto.LoginDTO;
 import cn.heshw.entity.User;
 import cn.heshw.exception.LoginException;
 import cn.heshw.feign.FeignUserService;
+import java.util.Objects;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,12 +33,16 @@ public class AuthController {
   public void login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) throws Exception {
     checkAccountValid(loginDTO.getUsername(), loginDTO.getPassword());
     final User user = feignUserService.getAccount(loginDTO.getUsername());
-    if (user != null && encode(loginDTO.getPassword()).equals(user.getPassword())) {
-      String token;
-      token = JWTUtil.generateToken(loginDTO.getUsername(), "super");
-      response.addHeader(AUTHORIZATION_HEADER, token);
+    if (user != null) {
+      if (encode(loginDTO.getPassword()).equals(user.getPassword())) {
+        String token;
+        token = JWTUtil.generateToken(loginDTO.getUsername(), "super");
+        response.addHeader(AUTHORIZATION_HEADER, token);
+      } else {
+        throw new LoginException("密码错误!");
+      }
     } else {
-      throw new LoginException("密码错误!");
+      throw new LoginException("emmmm...找不到该用户！");
     }
   }
 
@@ -45,7 +50,9 @@ public class AuthController {
   public void register(@RequestBody User user) throws javax.security.auth.login.LoginException {
     checkAccountValid(user.getUsername(), user.getPassword());
     user.setPassword(encode(user.getPassword()));
-    feignUserService.saveAccount(user);
+    if (!Objects.equals(feignUserService.saveAccount(user), 1)) {
+      throw new LoginException("注册失败");
+    }
   }
 
   private void checkAccountValid(String username, String password) {
