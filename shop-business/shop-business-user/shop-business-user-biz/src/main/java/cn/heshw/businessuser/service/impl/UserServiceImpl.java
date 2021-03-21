@@ -6,10 +6,13 @@ import cn.heshw.businessuser.mapper.UserMapper;
 import cn.heshw.businessuser.service.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 @Service
+@CacheConfig(cacheNames = {"UserCache"})
 public class UserServiceImpl implements UserService {
 
   private final UserMapper userMapper;
@@ -20,6 +23,7 @@ public class UserServiceImpl implements UserService {
   }
 
   @Override
+  @Cacheable(cacheNames = {"user"}, key="#username")
   public User getUserByName(String username) {
     UserExample example = new UserExample();
     example.createCriteria().andUsernameEqualTo(username);
