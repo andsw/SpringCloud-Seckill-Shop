@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.heshw.businessproduct.mapper.SpecParamMapper">
-  <resultMap id="BaseResultMap" type="cn.heshw.entity.SpecParam">
+<mapper namespace="cn.heshw.businessproduct.infrastructure.mapper.SkuConfigMapper">
+  <resultMap id="BaseResultMap" type="cn.heshw.entity.SkuConfig">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="cid" jdbcType="BIGINT" property="cid" />
     <result column="group_id" jdbcType="BIGINT" property="groupId" />
@@ -73,13 +73,13 @@
   <sql id="Base_Column_List">
     id, cid, group_id, name, numeric, unit, generic, searching, segments
   </sql>
-  <select id="selectByExample" parameterType="cn.heshw.entity.SpecParamExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="cn.heshw.entity.SkuConfigExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from spec_param
+    from sku_config
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -90,29 +90,29 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from spec_param
+    from sku_config
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from spec_param
+    delete from sku_config
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="cn.heshw.entity.SpecParamExample">
-    delete from spec_param
+  <delete id="deleteByExample" parameterType="cn.heshw.entity.SkuConfigExample">
+    delete from sku_config
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="cn.heshw.entity.SpecParam">
-    insert into spec_param (id, cid, group_id, 
+  <insert id="insert" parameterType="cn.heshw.entity.SkuConfig">
+    insert into sku_config (id, cid, group_id, 
       name, numeric, unit, generic, 
       searching, segments)
     values (#{id,jdbcType=BIGINT}, #{cid,jdbcType=BIGINT}, #{groupId,jdbcType=BIGINT}, 
       #{name,jdbcType=VARCHAR}, #{numeric,jdbcType=BIT}, #{unit,jdbcType=VARCHAR}, #{generic,jdbcType=BIT}, 
       #{searching,jdbcType=BIT}, #{segments,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="cn.heshw.entity.SpecParam">
-    insert into spec_param
+  <insert id="insertSelective" parameterType="cn.heshw.entity.SkuConfig">
+    insert into sku_config
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -172,14 +172,14 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="cn.heshw.entity.SpecParamExample" resultType="java.lang.Long">
-    select count(*) from spec_param
+  <select id="countByExample" parameterType="cn.heshw.entity.SkuConfigExample" resultType="java.lang.Long">
+    select count(*) from sku_config
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update spec_param
+    update sku_config
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=BIGINT},
@@ -214,7 +214,7 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update spec_param
+    update sku_config
     set id = #{record.id,jdbcType=BIGINT},
       cid = #{record.cid,jdbcType=BIGINT},
       group_id = #{record.groupId,jdbcType=BIGINT},
@@ -228,8 +228,8 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.heshw.entity.SpecParam">
-    update spec_param
+  <update id="updateByPrimaryKeySelective" parameterType="cn.heshw.entity.SkuConfig">
+    update sku_config
     <set>
       <if test="cid != null">
         cid = #{cid,jdbcType=BIGINT},
@@ -258,8 +258,8 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.heshw.entity.SpecParam">
-    update spec_param
+  <update id="updateByPrimaryKey" parameterType="cn.heshw.entity.SkuConfig">
+    update sku_config
     set cid = #{cid,jdbcType=BIGINT},
       group_id = #{groupId,jdbcType=BIGINT},
       name = #{name,jdbcType=VARCHAR},

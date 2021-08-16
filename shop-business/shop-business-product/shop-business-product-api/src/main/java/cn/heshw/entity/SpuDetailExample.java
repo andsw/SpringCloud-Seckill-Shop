@@ -164,283 +164,283 @@ public class SpuDetailExample {
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecIsNull() {
-            addCriterion("generic_spec is null");
+        public Criteria andConfigInfoIsNull() {
+            addCriterion("config_info is null");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecIsNotNull() {
-            addCriterion("generic_spec is not null");
+        public Criteria andConfigInfoIsNotNull() {
+            addCriterion("config_info is not null");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecEqualTo(String value) {
-            addCriterion("generic_spec =", value, "genericSpec");
+        public Criteria andConfigInfoEqualTo(String value) {
+            addCriterion("config_info =", value, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecNotEqualTo(String value) {
-            addCriterion("generic_spec <>", value, "genericSpec");
+        public Criteria andConfigInfoNotEqualTo(String value) {
+            addCriterion("config_info <>", value, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecGreaterThan(String value) {
-            addCriterion("generic_spec >", value, "genericSpec");
+        public Criteria andConfigInfoGreaterThan(String value) {
+            addCriterion("config_info >", value, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecGreaterThanOrEqualTo(String value) {
-            addCriterion("generic_spec >=", value, "genericSpec");
+        public Criteria andConfigInfoGreaterThanOrEqualTo(String value) {
+            addCriterion("config_info >=", value, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecLessThan(String value) {
-            addCriterion("generic_spec <", value, "genericSpec");
+        public Criteria andConfigInfoLessThan(String value) {
+            addCriterion("config_info <", value, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecLessThanOrEqualTo(String value) {
-            addCriterion("generic_spec <=", value, "genericSpec");
+        public Criteria andConfigInfoLessThanOrEqualTo(String value) {
+            addCriterion("config_info <=", value, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecLike(String value) {
-            addCriterion("generic_spec like", value, "genericSpec");
+        public Criteria andConfigInfoLike(String value) {
+            addCriterion("config_info like", value, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecNotLike(String value) {
-            addCriterion("generic_spec not like", value, "genericSpec");
+        public Criteria andConfigInfoNotLike(String value) {
+            addCriterion("config_info not like", value, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecIn(List<String> values) {
-            addCriterion("generic_spec in", values, "genericSpec");
+        public Criteria andConfigInfoIn(List<String> values) {
+            addCriterion("config_info in", values, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecNotIn(List<String> values) {
-            addCriterion("generic_spec not in", values, "genericSpec");
+        public Criteria andConfigInfoNotIn(List<String> values) {
+            addCriterion("config_info not in", values, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecBetween(String value1, String value2) {
-            addCriterion("generic_spec between", value1, value2, "genericSpec");
+        public Criteria andConfigInfoBetween(String value1, String value2) {
+            addCriterion("config_info between", value1, value2, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andGenericSpecNotBetween(String value1, String value2) {
-            addCriterion("generic_spec not between", value1, value2, "genericSpec");
+        public Criteria andConfigInfoNotBetween(String value1, String value2) {
+            addCriterion("config_info not between", value1, value2, "configInfo");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecIsNull() {
-            addCriterion("special_spec is null");
+        public Criteria andConfigOptionIsNull() {
+            addCriterion("config_option is null");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecIsNotNull() {
-            addCriterion("special_spec is not null");
+        public Criteria andConfigOptionIsNotNull() {
+            addCriterion("config_option is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecEqualTo(String value) {
-            addCriterion("special_spec =", value, "specialSpec");
+        public Criteria andConfigOptionEqualTo(String value) {
+            addCriterion("config_option =", value, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecNotEqualTo(String value) {
-            addCriterion("special_spec <>", value, "specialSpec");
+        public Criteria andConfigOptionNotEqualTo(String value) {
+            addCriterion("config_option <>", value, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecGreaterThan(String value) {
-            addCriterion("special_spec >", value, "specialSpec");
+        public Criteria andConfigOptionGreaterThan(String value) {
+            addCriterion("config_option >", value, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecGreaterThanOrEqualTo(String value) {
-            addCriterion("special_spec >=", value, "specialSpec");
+        public Criteria andConfigOptionGreaterThanOrEqualTo(String value) {
+            addCriterion("config_option >=", value, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecLessThan(String value) {
-            addCriterion("special_spec <", value, "specialSpec");
+        public Criteria andConfigOptionLessThan(String value) {
+            addCriterion("config_option <", value, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecLessThanOrEqualTo(String value) {
-            addCriterion("special_spec <=", value, "specialSpec");
+        public Criteria andConfigOptionLessThanOrEqualTo(String value) {
+            addCriterion("config_option <=", value, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecLike(String value) {
-            addCriterion("special_spec like", value, "specialSpec");
+        public Criteria andConfigOptionLike(String value) {
+            addCriterion("config_option like", value, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecNotLike(String value) {
-            addCriterion("special_spec not like", value, "specialSpec");
+        public Criteria andConfigOptionNotLike(String value) {
+            addCriterion("config_option not like", value, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecIn(List<String> values) {
-            addCriterion("special_spec in", values, "specialSpec");
+        public Criteria andConfigOptionIn(List<String> values) {
+            addCriterion("config_option in", values, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecNotIn(List<String> values) {
-            addCriterion("special_spec not in", values, "specialSpec");
+        public Criteria andConfigOptionNotIn(List<String> values) {
+            addCriterion("config_option not in", values, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecBetween(String value1, String value2) {
-            addCriterion("special_spec between", value1, value2, "specialSpec");
+        public Criteria andConfigOptionBetween(String value1, String value2) {
+            addCriterion("config_option between", value1, value2, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andSpecialSpecNotBetween(String value1, String value2) {
-            addCriterion("special_spec not between", value1, value2, "specialSpec");
+        public Criteria andConfigOptionNotBetween(String value1, String value2) {
+            addCriterion("config_option not between", value1, value2, "configOption");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListIsNull() {
-            addCriterion("packing_list is null");
+        public Criteria andAccessoriesListIsNull() {
+            addCriterion("accessories_list is null");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListIsNotNull() {
-            addCriterion("packing_list is not null");
+        public Criteria andAccessoriesListIsNotNull() {
+            addCriterion("accessories_list is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListEqualTo(String value) {
-            addCriterion("packing_list =", value, "packingList");
+        public Criteria andAccessoriesListEqualTo(String value) {
+            addCriterion("accessories_list =", value, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListNotEqualTo(String value) {
-            addCriterion("packing_list <>", value, "packingList");
+        public Criteria andAccessoriesListNotEqualTo(String value) {
+            addCriterion("accessories_list <>", value, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListGreaterThan(String value) {
-            addCriterion("packing_list >", value, "packingList");
+        public Criteria andAccessoriesListGreaterThan(String value) {
+            addCriterion("accessories_list >", value, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListGreaterThanOrEqualTo(String value) {
-            addCriterion("packing_list >=", value, "packingList");
+        public Criteria andAccessoriesListGreaterThanOrEqualTo(String value) {
+            addCriterion("accessories_list >=", value, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListLessThan(String value) {
-            addCriterion("packing_list <", value, "packingList");
+        public Criteria andAccessoriesListLessThan(String value) {
+            addCriterion("accessories_list <", value, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListLessThanOrEqualTo(String value) {
-            addCriterion("packing_list <=", value, "packingList");
+        public Criteria andAccessoriesListLessThanOrEqualTo(String value) {
+            addCriterion("accessories_list <=", value, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListLike(String value) {
-            addCriterion("packing_list like", value, "packingList");
+        public Criteria andAccessoriesListLike(String value) {
+            addCriterion("accessories_list like", value, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListNotLike(String value) {
-            addCriterion("packing_list not like", value, "packingList");
+        public Criteria andAccessoriesListNotLike(String value) {
+            addCriterion("accessories_list not like", value, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListIn(List<String> values) {
-            addCriterion("packing_list in", values, "packingList");
+        public Criteria andAccessoriesListIn(List<String> values) {
+            addCriterion("accessories_list in", values, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListNotIn(List<String> values) {
-            addCriterion("packing_list not in", values, "packingList");
+        public Criteria andAccessoriesListNotIn(List<String> values) {
+            addCriterion("accessories_list not in", values, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListBetween(String value1, String value2) {
-            addCriterion("packing_list between", value1, value2, "packingList");
+        public Criteria andAccessoriesListBetween(String value1, String value2) {
+            addCriterion("accessories_list between", value1, value2, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andPackingListNotBetween(String value1, String value2) {
-            addCriterion("packing_list not between", value1, value2, "packingList");
+        public Criteria andAccessoriesListNotBetween(String value1, String value2) {
+            addCriterion("accessories_list not between", value1, value2, "accessoriesList");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceIsNull() {
-            addCriterion("after_service is null");
+        public Criteria andAfterSaleIsNull() {
+            addCriterion("after_sale is null");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceIsNotNull() {
-            addCriterion("after_service is not null");
+        public Criteria andAfterSaleIsNotNull() {
+            addCriterion("after_sale is not null");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceEqualTo(String value) {
-            addCriterion("after_service =", value, "afterService");
+        public Criteria andAfterSaleEqualTo(String value) {
+            addCriterion("after_sale =", value, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceNotEqualTo(String value) {
-            addCriterion("after_service <>", value, "afterService");
+        public Criteria andAfterSaleNotEqualTo(String value) {
+            addCriterion("after_sale <>", value, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceGreaterThan(String value) {
-            addCriterion("after_service >", value, "afterService");
+        public Criteria andAfterSaleGreaterThan(String value) {
+            addCriterion("after_sale >", value, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceGreaterThanOrEqualTo(String value) {
-            addCriterion("after_service >=", value, "afterService");
+        public Criteria andAfterSaleGreaterThanOrEqualTo(String value) {
+            addCriterion("after_sale >=", value, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceLessThan(String value) {
-            addCriterion("after_service <", value, "afterService");
+        public Criteria andAfterSaleLessThan(String value) {
+            addCriterion("after_sale <", value, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceLessThanOrEqualTo(String value) {
-            addCriterion("after_service <=", value, "afterService");
+        public Criteria andAfterSaleLessThanOrEqualTo(String value) {
+            addCriterion("after_sale <=", value, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceLike(String value) {
-            addCriterion("after_service like", value, "afterService");
+        public Criteria andAfterSaleLike(String value) {
+            addCriterion("after_sale like", value, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceNotLike(String value) {
-            addCriterion("after_service not like", value, "afterService");
+        public Criteria andAfterSaleNotLike(String value) {
+            addCriterion("after_sale not like", value, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceIn(List<String> values) {
-            addCriterion("after_service in", values, "afterService");
+        public Criteria andAfterSaleIn(List<String> values) {
+            addCriterion("after_sale in", values, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceNotIn(List<String> values) {
-            addCriterion("after_service not in", values, "afterService");
+        public Criteria andAfterSaleNotIn(List<String> values) {
+            addCriterion("after_sale not in", values, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceBetween(String value1, String value2) {
-            addCriterion("after_service between", value1, value2, "afterService");
+        public Criteria andAfterSaleBetween(String value1, String value2) {
+            addCriterion("after_sale between", value1, value2, "afterSale");
             return (Criteria) this;
         }
 
-        public Criteria andAfterServiceNotBetween(String value1, String value2) {
-            addCriterion("after_service not between", value1, value2, "afterService");
+        public Criteria andAfterSaleNotBetween(String value1, String value2) {
+            addCriterion("after_sale not between", value1, value2, "afterSale");
             return (Criteria) this;
         }
     }

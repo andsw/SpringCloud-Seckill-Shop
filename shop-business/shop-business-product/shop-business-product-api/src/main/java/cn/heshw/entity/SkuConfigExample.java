@@ -3,14 +3,14 @@ package cn.heshw.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpecParamExample {
+public class SkuConfigExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public SpecParamExample() {
+    public SkuConfigExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

@@ -3,13 +3,13 @@ package cn.heshw.entity;
 public class SpuDetail {
     private Long spuId;
 
-    private String genericSpec;
+    private String configInfo;
 
-    private String specialSpec;
+    private String configOption;
 
-    private String packingList;
+    private String accessoriesList;
 
-    private String afterService;
+    private String afterSale;
 
     private String description;
 
@@ -21,36 +21,36 @@ public class SpuDetail {
         this.spuId = spuId;
     }
 
-    public String getGenericSpec() {
-        return genericSpec;
+    public String getConfigInfo() {
+        return configInfo;
     }
 
-    public void setGenericSpec(String genericSpec) {
-        this.genericSpec = genericSpec;
+    public void setConfigInfo(String configInfo) {
+        this.configInfo = configInfo;
     }
 
-    public String getSpecialSpec() {
-        return specialSpec;
+    public String getConfigOption() {
+        return configOption;
     }
 
-    public void setSpecialSpec(String specialSpec) {
-        this.specialSpec = specialSpec;
+    public void setConfigOption(String configOption) {
+        this.configOption = configOption;
     }
 
-    public String getPackingList() {
-        return packingList;
+    public String getAccessoriesList() {
+        return accessoriesList;
     }
 
-    public void setPackingList(String packingList) {
-        this.packingList = packingList;
+    public void setAccessoriesList(String accessoriesList) {
+        this.accessoriesList = accessoriesList;
     }
 
-    public String getAfterService() {
-        return afterService;
+    public String getAfterSale() {
+        return afterSale;
     }
 
-    public void setAfterService(String afterService) {
-        this.afterService = afterService;
+    public void setAfterSale(String afterSale) {
+        this.afterSale = afterSale;
     }
 
     public String getDescription() {

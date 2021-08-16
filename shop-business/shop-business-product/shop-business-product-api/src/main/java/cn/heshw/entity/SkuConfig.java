@@ -1,6 +1,6 @@
 package cn.heshw.entity;
 
-public class SpecParam {
+public class SkuConfig {
     private Long id;
 
     private Long cid;

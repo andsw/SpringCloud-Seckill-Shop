@@ -1,4 +1,4 @@
-package cn.heshw.businessproduct.mapper;
+package cn.heshw.businessproduct.infrastructure.mapper;
 
 import cn.heshw.entity.Category;
 import cn.heshw.entity.CategoryExample;

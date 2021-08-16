@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.heshw.businessproduct.mapper.SpuDetailMapper">
+<mapper namespace="cn.heshw.businessproduct.infrastructure.mapper.SpuDetailMapper">
   <resultMap id="BaseResultMap" type="cn.heshw.entity.SpuDetail">
     <id column="spu_id" jdbcType="BIGINT" property="spuId" />
-    <result column="generic_spec" jdbcType="VARCHAR" property="genericSpec" />
-    <result column="special_spec" jdbcType="VARCHAR" property="specialSpec" />
-    <result column="packing_list" jdbcType="VARCHAR" property="packingList" />
-    <result column="after_service" jdbcType="VARCHAR" property="afterService" />
+    <result column="config_info" jdbcType="VARCHAR" property="configInfo" />
+    <result column="config_option" jdbcType="VARCHAR" property="configOption" />
+    <result column="accessories_list" jdbcType="VARCHAR" property="accessoriesList" />
+    <result column="after_sale" jdbcType="VARCHAR" property="afterSale" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.heshw.entity.SpuDetail">
     <result column="description" jdbcType="LONGVARCHAR" property="description" />
@@ -70,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    spu_id, generic_spec, special_spec, packing_list, after_service
+    spu_id, config_info, config_option, accessories_list, after_sale
   </sql>
   <sql id="Blob_Column_List">
     description
@@ -124,11 +124,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="cn.heshw.entity.SpuDetail">
-    insert into spu_detail (spu_id, generic_spec, special_spec, 
-      packing_list, after_service, description
+    insert into spu_detail (spu_id, config_info, config_option, 
+      accessories_list, after_sale, description
       )
-    values (#{spuId,jdbcType=BIGINT}, #{genericSpec,jdbcType=VARCHAR}, #{specialSpec,jdbcType=VARCHAR}, 
-      #{packingList,jdbcType=VARCHAR}, #{afterService,jdbcType=VARCHAR}, #{description,jdbcType=LONGVARCHAR}
+    values (#{spuId,jdbcType=BIGINT}, #{configInfo,jdbcType=VARCHAR}, #{configOption,jdbcType=VARCHAR}, 
+      #{accessoriesList,jdbcType=VARCHAR}, #{afterSale,jdbcType=VARCHAR}, #{description,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="cn.heshw.entity.SpuDetail">
@@ -137,17 +137,17 @@
       <if test="spuId != null">
         spu_id,
       </if>
-      <if test="genericSpec != null">
-        generic_spec,
+      <if test="configInfo != null">
+        config_info,
       </if>
-      <if test="specialSpec != null">
-        special_spec,
+      <if test="configOption != null">
+        config_option,
       </if>
-      <if test="packingList != null">
-        packing_list,
+      <if test="accessoriesList != null">
+        accessories_list,
       </if>
-      <if test="afterService != null">
-        after_service,
+      <if test="afterSale != null">
+        after_sale,
       </if>
       <if test="description != null">
         description,
@@ -157,17 +157,17 @@
       <if test="spuId != null">
         #{spuId,jdbcType=BIGINT},
       </if>
-      <if test="genericSpec != null">
-        #{genericSpec,jdbcType=VARCHAR},
+      <if test="configInfo != null">
+        #{configInfo,jdbcType=VARCHAR},
       </if>
-      <if test="specialSpec != null">
-        #{specialSpec,jdbcType=VARCHAR},
+      <if test="configOption != null">
+        #{configOption,jdbcType=VARCHAR},
       </if>
-      <if test="packingList != null">
-        #{packingList,jdbcType=VARCHAR},
+      <if test="accessoriesList != null">
+        #{accessoriesList,jdbcType=VARCHAR},
       </if>
-      <if test="afterService != null">
-        #{afterService,jdbcType=VARCHAR},
+      <if test="afterSale != null">
+        #{afterSale,jdbcType=VARCHAR},
       </if>
       <if test="description != null">
         #{description,jdbcType=LONGVARCHAR},
@@ -186,17 +186,17 @@
       <if test="record.spuId != null">
         spu_id = #{record.spuId,jdbcType=BIGINT},
       </if>
-      <if test="record.genericSpec != null">
-        generic_spec = #{record.genericSpec,jdbcType=VARCHAR},
+      <if test="record.configInfo != null">
+        config_info = #{record.configInfo,jdbcType=VARCHAR},
       </if>
-      <if test="record.specialSpec != null">
-        special_spec = #{record.specialSpec,jdbcType=VARCHAR},
+      <if test="record.configOption != null">
+        config_option = #{record.configOption,jdbcType=VARCHAR},
       </if>
-      <if test="record.packingList != null">
-        packing_list = #{record.packingList,jdbcType=VARCHAR},
+      <if test="record.accessoriesList != null">
+        accessories_list = #{record.accessoriesList,jdbcType=VARCHAR},
       </if>
-      <if test="record.afterService != null">
-        after_service = #{record.afterService,jdbcType=VARCHAR},
+      <if test="record.afterSale != null">
+        after_sale = #{record.afterSale,jdbcType=VARCHAR},
       </if>
       <if test="record.description != null">
         description = #{record.description,jdbcType=LONGVARCHAR},
@@ -209,10 +209,10 @@
   <update id="updateByExampleWithBLOBs" parameterType="map">
     update spu_detail
     set spu_id = #{record.spuId,jdbcType=BIGINT},
-      generic_spec = #{record.genericSpec,jdbcType=VARCHAR},
-      special_spec = #{record.specialSpec,jdbcType=VARCHAR},
-      packing_list = #{record.packingList,jdbcType=VARCHAR},
-      after_service = #{record.afterService,jdbcType=VARCHAR},
+      config_info = #{record.configInfo,jdbcType=VARCHAR},
+      config_option = #{record.configOption,jdbcType=VARCHAR},
+      accessories_list = #{record.accessoriesList,jdbcType=VARCHAR},
+      after_sale = #{record.afterSale,jdbcType=VARCHAR},
       description = #{record.description,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -221,10 +221,10 @@
   <update id="updateByExample" parameterType="map">
     update spu_detail
     set spu_id = #{record.spuId,jdbcType=BIGINT},
-      generic_spec = #{record.genericSpec,jdbcType=VARCHAR},
-      special_spec = #{record.specialSpec,jdbcType=VARCHAR},
-      packing_list = #{record.packingList,jdbcType=VARCHAR},
-      after_service = #{record.afterService,jdbcType=VARCHAR}
+      config_info = #{record.configInfo,jdbcType=VARCHAR},
+      config_option = #{record.configOption,jdbcType=VARCHAR},
+      accessories_list = #{record.accessoriesList,jdbcType=VARCHAR},
+      after_sale = #{record.afterSale,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -232,17 +232,17 @@
   <update id="updateByPrimaryKeySelective" parameterType="cn.heshw.entity.SpuDetail">
     update spu_detail
     <set>
-      <if test="genericSpec != null">
-        generic_spec = #{genericSpec,jdbcType=VARCHAR},
+      <if test="configInfo != null">
+        config_info = #{configInfo,jdbcType=VARCHAR},
       </if>
-      <if test="specialSpec != null">
-        special_spec = #{specialSpec,jdbcType=VARCHAR},
+      <if test="configOption != null">
+        config_option = #{configOption,jdbcType=VARCHAR},
       </if>
-      <if test="packingList != null">
-        packing_list = #{packingList,jdbcType=VARCHAR},
+      <if test="accessoriesList != null">
+        accessories_list = #{accessoriesList,jdbcType=VARCHAR},
       </if>
-      <if test="afterService != null">
-        after_service = #{afterService,jdbcType=VARCHAR},
+      <if test="afterSale != null">
+        after_sale = #{afterSale,jdbcType=VARCHAR},
       </if>
       <if test="description != null">
         description = #{description,jdbcType=LONGVARCHAR},
@@ -252,19 +252,19 @@
   </update>
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.heshw.entity.SpuDetail">
     update spu_detail
-    set generic_spec = #{genericSpec,jdbcType=VARCHAR},
-      special_spec = #{specialSpec,jdbcType=VARCHAR},
-      packing_list = #{packingList,jdbcType=VARCHAR},
-      after_service = #{afterService,jdbcType=VARCHAR},
+    set config_info = #{configInfo,jdbcType=VARCHAR},
+      config_option = #{configOption,jdbcType=VARCHAR},
+      accessories_list = #{accessoriesList,jdbcType=VARCHAR},
+      after_sale = #{afterSale,jdbcType=VARCHAR},
       description = #{description,jdbcType=LONGVARCHAR}
     where spu_id = #{spuId,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="cn.heshw.entity.SpuDetail">
     update spu_detail
-    set generic_spec = #{genericSpec,jdbcType=VARCHAR},
-      special_spec = #{specialSpec,jdbcType=VARCHAR},
-      packing_list = #{packingList,jdbcType=VARCHAR},
-      after_service = #{afterService,jdbcType=VARCHAR}
+    set config_info = #{configInfo,jdbcType=VARCHAR},
+      config_option = #{configOption,jdbcType=VARCHAR},
+      accessories_list = #{accessoriesList,jdbcType=VARCHAR},
+      after_sale = #{afterSale,jdbcType=VARCHAR}
     where spu_id = #{spuId,jdbcType=BIGINT}
   </update>
 </mapper>

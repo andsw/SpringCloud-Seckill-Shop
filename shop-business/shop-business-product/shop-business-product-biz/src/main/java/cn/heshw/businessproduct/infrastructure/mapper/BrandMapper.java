@@ -1,4 +1,4 @@
-package cn.heshw.businessproduct.mapper;
+package cn.heshw.businessproduct.infrastructure.mapper;
 
 import cn.heshw.entity.Brand;
 import cn.heshw.entity.BrandExample;

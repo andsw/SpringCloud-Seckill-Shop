@@ -1,6 +1,6 @@
 package cn.heshw.entity;
 
-public class SpecGroup {
+public class SpuConfig {
     private Long id;
 
     private Long cid;

@@ -27,7 +27,7 @@
       <property name="suppressAllComments" value="true"/>
     </commentGenerator>
 
-    <jdbcConnection connectionURL="jdbc:mysql://47.101.223.154:3306/shop-product"
+    <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/shop-product"
       driverClass="com.mysql.cj.jdbc.Driver"
       userId="root" password="123456">
       <!--MySQL 8.x 需要指定服务器的时区-->
@@ -38,15 +38,15 @@
 
     <javaModelGenerator targetPackage="cn.heshw.entity" targetProject="${generator.project.root}\shop-business-product-api\src\main\java"/>
     <sqlMapGenerator targetPackage="mapper" targetProject="${generator.project.root}\shop-business-product-biz\src\main\resources"/>
-    <javaClientGenerator targetPackage="cn.heshw.businessproduct.mapper" targetProject="${generator.project.root}\shop-business-product-biz\src\main\java"
+    <javaClientGenerator targetPackage="cn.heshw.businessproduct.infrastructure.mapper" targetProject="${generator.project.root}\shop-business-product-biz\src\main\java"
       type="XMLMAPPER"/>
 
     <table tableName="brand"/>
     <table tableName="category"/>
     <table tableName="category_brand"/>
     <table tableName="sku"/>
-    <table tableName="spec_group"/>
-    <table tableName="spec_param"/>
+    <table tableName="spu_config"/>
+    <table tableName="sku_config"/>
     <table tableName="spu"/>
     <table tableName="spu_detail"/>
     <table tableName="stock"/>

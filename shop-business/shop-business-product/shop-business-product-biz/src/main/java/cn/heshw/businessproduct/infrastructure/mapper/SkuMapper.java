@@ -1,4 +1,4 @@
-package cn.heshw.businessproduct.mapper;
+package cn.heshw.businessproduct.infrastructure.mapper;
 
 import cn.heshw.entity.Sku;
 import cn.heshw.entity.SkuExample;
