@@ -70,10 +70,13 @@
           <skip>true</skip>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
+<!--   can't work with jdk16   -->
+<!--   But it is useful. Using this plugin, we can generate a fat.jar,
+       which contains all jar packages that can make the project run successfully and independently  -->
+<!--      <plugin>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--      </plugin>-->
     </plugins>
     <resources>
       <resource>

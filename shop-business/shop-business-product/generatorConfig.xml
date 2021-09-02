@@ -41,14 +41,14 @@
     <javaClientGenerator targetPackage="cn.heshw.businessproduct.infrastructure.mapper" targetProject="${generator.project.root}\shop-business-product-biz\src\main\java"
       type="XMLMAPPER"/>
 
-    <table tableName="brand"/>
-    <table tableName="category"/>
-    <table tableName="category_brand"/>
-    <table tableName="sku"/>
-    <table tableName="spu_config"/>
-    <table tableName="sku_config"/>
-    <table tableName="spu"/>
-    <table tableName="spu_detail"/>
-    <table tableName="stock"/>
+    <table tableName="t_brand"/>
+    <table tableName="t_category"/>
+    <table tableName="t_category_brand"/>
+    <table tableName="t_sku"/>
+    <table tableName="t_spu_config"/>
+    <table tableName="t_sku_config"/>
+    <table tableName="t_spu"/>
+    <table tableName="t_spu_detail"/>
+    <table tableName="t_stock"/>
   </context>
 </generatorConfiguration>
