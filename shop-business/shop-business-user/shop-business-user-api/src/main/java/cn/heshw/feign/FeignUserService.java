@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Component
-@FeignClient(name = "business-user", fallback = UserServiceFallback.class)
+@FeignClient(name = "business-user")
 public interface FeignUserService {
 
   @GetMapping(value = "/users")
