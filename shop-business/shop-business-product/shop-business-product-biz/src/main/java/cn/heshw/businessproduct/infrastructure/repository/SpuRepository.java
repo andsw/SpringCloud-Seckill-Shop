@@ -2,7 +2,6 @@ package cn.heshw.businessproduct.infrastructure.repository;
 
 import cn.heshw.businessproduct.domain.aggregate.spu.Spu;
 import cn.heshw.ddd.Repository;
-import com.github.pagehelper.Page;
 import java.util.List;
 
 

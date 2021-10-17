@@ -29,7 +29,7 @@ public class AuthController {
     this.feignUserService = feignUserService;
   }
 
-  @PostMapping(value = "/login")
+  @PostMapping(value = "/sign_in")
   public void login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) throws Exception {
     checkAccountValid(loginDTO.getUsername(), loginDTO.getPassword());
     final User user = feignUserService.getAccount(loginDTO.getUsername());
@@ -46,7 +46,7 @@ public class AuthController {
     }
   }
 
-  @PostMapping("/register")
+  @PostMapping("/sign_up")
   public void register(@RequestBody User user) throws javax.security.auth.login.LoginException {
     checkAccountValid(user.getUsername(), user.getPassword());
     user.setPassword(encode(user.getPassword()));

@@ -5,7 +5,6 @@ import cn.heshw.businessproduct.infrastructure.mapper.TSpuMapper;
 import cn.heshw.businessproduct.infrastructure.repository.SpuRepository;
 import cn.heshw.entity.TSpu;
 import cn.heshw.entity.TSpuExample;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

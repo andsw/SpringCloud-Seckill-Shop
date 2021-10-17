@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  cn.heshw.feign.fallback.UserServiceFallback
+  cn.heshw.feign.fallback.UserServiceFallback\
+  cn.heshw.feign.FeignUserService
