@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Slf4j
-@Component
 public class UserServiceFallback implements FeignUserService {
 
   // TODO：抛异常不是合适的处理方法，后续再思考

@@ -11,8 +11,6 @@ import javax.validation.constraints.NotNull;
 
 public class IDGenerator {
 
-  private static final int RANDOM_BOUND = 4096;
-
   // timestamp start from 2021-01-01 00:00:00
   private static final long START_TIMESTAMP = 1609430400;
   private static final int SERVER_ID_SHIFT = 22;
@@ -21,7 +19,7 @@ public class IDGenerator {
 
   private Long lastTimeSec;
   private Integer tailIncreaseId;
-  private Integer serverId;
+  private final Integer serverId;
 
   public IDGenerator(int serverId) {
     this.serverId = serverId;
