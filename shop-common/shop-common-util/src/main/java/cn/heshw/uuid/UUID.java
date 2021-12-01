@@ -1,4 +1,4 @@
-package cn.heshw.id;
+package cn.heshw.uuid;
 
 import cn.heshw.constant.EntityIDPrefix;
 import java.util.HashSet;
@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import javax.validation.constraints.NotNull;
 
-public class IDGenerator {
+public class UUID {
 
   // timestamp start from 2021-01-01 00:00:00
   private static final long START_TIMESTAMP = 1609430400;
@@ -21,7 +21,7 @@ public class IDGenerator {
   private Integer tailIncreaseId;
   private final Integer serverId;
 
-  public IDGenerator(int serverId) {
+  public UUID(int serverId) {
     this.serverId = serverId;
     lastTimeSec = currentTimeSec();
     tailIncreaseId = 0;
@@ -70,9 +70,10 @@ public class IDGenerator {
 
   public static void main(String[] args) throws InterruptedException {
     Set<String> set = new HashSet<>();
-    IDGenerator generator = new IDGenerator(1);
+    UUID generator = new UUID(1);
     ExecutorService service = Executors.newFixedThreadPool(5, new ThreadFactory() {
       private int no = 0;
+
       @Override
       public Thread newThread(@NotNull Runnable r) {
         return new Thread(r, (no++) + "NO");

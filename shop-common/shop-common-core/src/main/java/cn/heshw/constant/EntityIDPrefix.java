@@ -1,7 +1,7 @@
 package cn.heshw.constant;
 
 public enum EntityIDPrefix {
-  SKU("SKU"), SPU("SPU");
+  SKU("SKU"), SPU("SPU"), USER("USR");
 
   private String prefix;
 
