@@ -1,6 +1,5 @@
 package cn.heshw.businessuser.config;
 
-import cn.heshw.exception.LoginException;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

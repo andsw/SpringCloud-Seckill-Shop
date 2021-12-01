@@ -1,13 +1,12 @@
 package cn.heshw.businessproduct.domain.aggregate.spu;
 
 import cn.heshw.ddd.AggregateRoot;
-import cn.heshw.ddd.Entity;
+import cn.heshw.ddd.DefaultEntity;
 import java.util.Date;
 import lombok.Builder;
 
 @Builder
-public class Spu implements Entity<String, Spu>, AggregateRoot {
-  private String id;
+public class Spu extends DefaultEntity implements AggregateRoot {
   private String title;
   private String subTitle;
   private String cid1;
@@ -19,14 +18,4 @@ public class Spu implements Entity<String, Spu>, AggregateRoot {
   private Boolean valid;
   private Date createTime;
   private Date lastUpdateTime;
-
-  @Override
-  public String identity() {
-    return null;
-  }
-
-  @Override
-  public boolean sameIdentityAs(Spu other) {
-    return false;
-  }
 }

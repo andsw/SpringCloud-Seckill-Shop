@@ -5,7 +5,7 @@ import cn.heshw.ddd.Repository;
 import java.util.List;
 
 
-public interface SpuRepository extends Repository<String, Spu> {
+public interface SpuRepository extends Repository<Spu> {
 
   List<Spu> listByPage(int page, int pageSize);
 }

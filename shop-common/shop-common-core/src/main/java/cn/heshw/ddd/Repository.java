@@ -1,8 +1,8 @@
 package cn.heshw.ddd;
 
-public interface Repository<IDType, T extends Entity<IDType, T>> {
+public interface Repository<T extends Entity> {
 
-  T find(IDType id);
+  T find(String id);
 
   /**
    * contains both insert and update features.
@@ -10,5 +10,5 @@ public interface Repository<IDType, T extends Entity<IDType, T>> {
    */
   void save(T domain);
 
-  void delete(IDType id);
+  void delete(String id);
 }

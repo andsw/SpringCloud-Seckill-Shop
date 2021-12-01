@@ -1,7 +1,6 @@
 package cn.heshw.ddd;
 
-public interface Entity<IDType, T> {
-  IDType identity();
+public interface Entity {
 
-  boolean sameIdentityAs(T other);
+  String identityId();
 }
