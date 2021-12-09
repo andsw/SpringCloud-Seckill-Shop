@@ -28,7 +28,7 @@ public class SpuRepositoryImpl implements SpuRepository {
   }
 
   @Override
-  public Spu find(String id) {
+  public Spu find(String entityId) {
     return null;
   }
 
@@ -38,7 +38,7 @@ public class SpuRepositoryImpl implements SpuRepository {
   }
 
   @Override
-  public void delete(String id) {
+  public void remove(String entityId) {
 
   }
 }

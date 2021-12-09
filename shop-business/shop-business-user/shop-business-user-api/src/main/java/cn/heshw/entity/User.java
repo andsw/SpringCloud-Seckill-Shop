@@ -1,11 +1,11 @@
 package cn.heshw.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable {
-
+public class User {
     private Integer id;
+
+    private String userUid;
 
     private String username;
 
@@ -21,6 +21,14 @@ public class User implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getUserUid() {
+        return userUid;
+    }
+
+    public void setUserUid(String userUid) {
+        this.userUid = userUid;
     }
 
     public String getUsername() {

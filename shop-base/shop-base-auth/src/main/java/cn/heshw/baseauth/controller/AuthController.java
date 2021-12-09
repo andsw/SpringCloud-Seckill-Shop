@@ -5,10 +5,9 @@ import static org.apache.commons.lang3.StringUtils.isBlank;
 
 import cn.heshw.auth.JWTUtil;
 import cn.heshw.baseauth.dto.LoginDTO;
-import cn.heshw.entity.User;
+import cn.heshw.dto.AccountDTO;
 import cn.heshw.exception.LoginException;
 import cn.heshw.feign.FeignUserService;
-import java.util.Objects;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,9 +31,9 @@ public class AuthController {
   @PostMapping(value = "/sign_in")
   public void login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) throws Exception {
     checkAccountValid(loginDTO.getUsername(), loginDTO.getPassword());
-    final User user = feignUserService.getAccount(loginDTO.getUsername());
-    if (user != null) {
-      if (encode(loginDTO.getPassword()).equals(user.getPassword())) {
+    AccountDTO account = feignUserService.getAccount(loginDTO.getUsername());
+    if (account != null) {
+      if (encode(loginDTO.getPassword()).equals(account.getPassword())) {
         String token;
         token = JWTUtil.generateToken(loginDTO.getUsername(), "super");
         response.addHeader(AUTHORIZATION_HEADER, token);
@@ -47,12 +46,10 @@ public class AuthController {
   }
 
   @PostMapping("/sign_up")
-  public void register(@RequestBody User user) throws javax.security.auth.login.LoginException {
-    checkAccountValid(user.getUsername(), user.getPassword());
-    user.setPassword(encode(user.getPassword()));
-    if (!Objects.equals(feignUserService.saveAccount(user), 1)) {
-      throw new LoginException("注册失败");
-    }
+  public void register(@RequestBody AccountDTO newAccount) throws LoginException {
+    checkAccountValid(newAccount.getUsername(), newAccount.getPassword());
+    newAccount.setPassword(encode(newAccount.getPassword()));
+    feignUserService.saveAccount(newAccount);
   }
 
   private void checkAccountValid(String username, String password) {

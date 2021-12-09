@@ -58,6 +58,10 @@
       <groupId>cn.heshw</groupId>
       <artifactId>shop-base-redis</artifactId>
     </dependency>
+    <dependency>
+      <groupId>cn.heshw</groupId>
+      <artifactId>shop-common-util</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

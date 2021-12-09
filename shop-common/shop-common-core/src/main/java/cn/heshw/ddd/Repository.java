@@ -2,7 +2,7 @@ package cn.heshw.ddd;
 
 public interface Repository<T extends Entity> {
 
-  T find(String id);
+  T find(String entityId);
 
   /**
    * contains both insert and update features.
@@ -10,5 +10,5 @@ public interface Repository<T extends Entity> {
    */
   void save(T domain);
 
-  void delete(String id);
+  void remove(String entityId);
 }
