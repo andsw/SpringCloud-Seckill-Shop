@@ -1,4 +1,4 @@
-package cn.heshw.businessuser.infrastruture;
+package cn.heshw.businessuser.infrastructure;
 
 import cn.heshw.businessuser.domain.aggregate.Account;
 import cn.heshw.entity.User;

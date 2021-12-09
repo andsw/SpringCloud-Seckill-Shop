@@ -1,4 +1,4 @@
-package cn.heshw.businessuser.infrastruture.mapper;
+package cn.heshw.businessuser.infrastructure.mapper;
 
 import cn.heshw.entity.User;
 import cn.heshw.entity.UserExample;

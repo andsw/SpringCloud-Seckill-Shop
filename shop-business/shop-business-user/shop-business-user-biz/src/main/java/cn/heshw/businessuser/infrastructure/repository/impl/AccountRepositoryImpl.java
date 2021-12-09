@@ -1,13 +1,13 @@
-package cn.heshw.businessuser.infrastruture.repository.impl;
+package cn.heshw.businessuser.infrastructure.repository.impl;
 
-import static cn.heshw.businessuser.infrastruture.DataConverter.toDO;
-import static cn.heshw.businessuser.infrastruture.DataConverter.toEntity;
+import static cn.heshw.businessuser.infrastructure.DataConverter.toDO;
+import static cn.heshw.businessuser.infrastructure.DataConverter.toEntity;
 import static cn.heshw.constant.EntityIDPrefix.USER;
 import static org.springframework.util.CollectionUtils.firstElement;
 
 import cn.heshw.businessuser.domain.aggregate.Account;
-import cn.heshw.businessuser.infrastruture.mapper.UserMapper;
-import cn.heshw.businessuser.infrastruture.repository.AccountRepository;
+import cn.heshw.businessuser.infrastructure.mapper.UserMapper;
+import cn.heshw.businessuser.infrastructure.repository.AccountRepository;
 import cn.heshw.entity.User;
 import cn.heshw.entity.UserExample;
 import cn.heshw.uuid.UUID;

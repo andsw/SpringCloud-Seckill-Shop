@@ -2,7 +2,7 @@ package cn.heshw.businessuser.service.impl;
 
 import cn.heshw.entity.User;
 import cn.heshw.entity.UserExample;
-import cn.heshw.businessuser.infrastruture.mapper.UserMapper;
+import cn.heshw.businessuser.infrastructure.mapper.UserMapper;
 import cn.heshw.businessuser.service.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

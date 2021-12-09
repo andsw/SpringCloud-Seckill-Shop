@@ -8,6 +8,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import javax.validation.constraints.NotNull;
+import org.springframework.beans.factory.annotation.Value;
 
 public class UUID {
 
@@ -19,12 +20,16 @@ public class UUID {
 
   private Long lastTimeSec;
   private Integer tailIncreaseId;
-  private final Integer serverId;
+  @Value("${serverId:0}")
+  private Integer serverId;
 
-  public UUID(int serverId) {
-    this.serverId = serverId;
+  public UUID() {
     lastTimeSec = currentTimeSec();
     tailIncreaseId = 0;
+  }
+
+  public UUID(Integer serverId) {
+    this.serverId = serverId;
   }
 
   public synchronized String generateIdFor(EntityIDPrefix entityIDPrefix) {
@@ -70,7 +75,7 @@ public class UUID {
 
   public static void main(String[] args) throws InterruptedException {
     Set<String> set = new HashSet<>();
-    UUID generator = new UUID(1);
+    UUID generator = new UUID();
     ExecutorService service = Executors.newFixedThreadPool(5, new ThreadFactory() {
       private int no = 0;
 

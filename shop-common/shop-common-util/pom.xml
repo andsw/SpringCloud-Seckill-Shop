@@ -22,11 +22,6 @@
       <artifactId>jjwt</artifactId>
       <version>0.9.1</version>
     </dependency>
-    <dependency>
-      <groupId>cn.heshw</groupId>
-      <artifactId>shop-common-core</artifactId>
-    </dependency>
-
   </dependencies>
 
 </project>

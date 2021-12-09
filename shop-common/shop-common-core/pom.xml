@@ -13,10 +13,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.20</version>
-      <scope>provided</scope>
+      <groupId>cn.heshw</groupId>
+      <artifactId>shop-common-util</artifactId>
     </dependency>
   </dependencies>
 

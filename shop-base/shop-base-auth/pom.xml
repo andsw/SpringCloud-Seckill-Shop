@@ -39,10 +39,6 @@
     </dependency>
     <dependency>
       <groupId>cn.heshw</groupId>
-      <artifactId>shop-common-util</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>cn.heshw</groupId>
       <artifactId>shop-business-user-api</artifactId>
     </dependency>
     <dependency>

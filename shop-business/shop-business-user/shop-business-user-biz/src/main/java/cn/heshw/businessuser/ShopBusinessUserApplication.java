@@ -12,7 +12,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDiscoveryClient
 @EnableSwagger2Doc
 @EnableCaching
-@MapperScan(basePackages = {"cn.heshw.businessuser.mapper"})
+@MapperScan(basePackages = {"cn.heshw.businessuser.infrastructure.mapper"})
 public class ShopBusinessUserApplication {
 
   public static void main(String[] args) {
