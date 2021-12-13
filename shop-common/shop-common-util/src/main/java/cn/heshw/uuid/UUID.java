@@ -30,6 +30,8 @@ public class UUID {
 
   public UUID(Integer serverId) {
     this.serverId = serverId;
+    lastTimeSec = currentTimeSec();
+    tailIncreaseId = 0;
   }
 
   public synchronized String generateIdFor(EntityIDPrefix entityIDPrefix) {

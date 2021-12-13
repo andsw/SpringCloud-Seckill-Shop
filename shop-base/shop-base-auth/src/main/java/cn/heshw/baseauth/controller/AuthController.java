@@ -9,12 +9,14 @@ import cn.heshw.dto.AccountDTO;
 import cn.heshw.exception.LoginException;
 import cn.heshw.feign.FeignUserService;
 import javax.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Slf4j
 @RestController
 @RequestMapping(value = "/auth")
 public class AuthController {
@@ -31,6 +33,7 @@ public class AuthController {
   @PostMapping(value = "/sign_in")
   public void login(@RequestBody LoginDTO loginDTO, HttpServletResponse response) throws Exception {
     checkAccountValid(loginDTO.getUsername(), loginDTO.getPassword());
+    log.info("{} sign in", loginDTO.getUsername());
     AccountDTO account = feignUserService.getAccount(loginDTO.getUsername());
     if (account != null) {
       if (encode(loginDTO.getPassword()).equals(account.getPassword())) {
@@ -46,7 +49,7 @@ public class AuthController {
   }
 
   @PostMapping("/sign_up")
-  public void register(@RequestBody AccountDTO newAccount) throws LoginException {
+  public void register(@RequestBody AccountDTO newAccount) {
     checkAccountValid(newAccount.getUsername(), newAccount.getPassword());
     newAccount.setPassword(encode(newAccount.getPassword()));
     feignUserService.saveAccount(newAccount);

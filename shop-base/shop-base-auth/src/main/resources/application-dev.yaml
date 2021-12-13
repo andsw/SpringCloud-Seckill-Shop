@@ -20,12 +20,13 @@ management:
 
 swagger:
   base-package: cn.heshw.baseauth
+
 feign:
   client:
     config:
       default:
-        connect-timeout: 5000
-        read-timeout: 3000
+        connect-timeout: 10000
+        read-timeout: 6000
         logger-level: full
   hystrix:
     enabled: true
